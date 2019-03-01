@@ -11,7 +11,6 @@ module.exports = {
 };
 
 function generateToken(user) {
-  console.log("got to gen tOken")
   const payload = {
       subject: user.id,
       username: user.username,
