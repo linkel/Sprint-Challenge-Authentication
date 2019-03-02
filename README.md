@@ -29,9 +29,19 @@ Implement an User Authentication System in order to access the jokes from the Jo
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. What is the purpose of using _sessions_?
-1. What does bcrypt do to help us store passwords in a secure manner.
+
+Sessions keep some information about a client beyond just that single visit to a webpage. They are commonly used to maintain an authenticated state for a client so that they do not have to log in again on a site if they close the browser and revisit.
+
+2. What does bcrypt do to help us store passwords in a secure manner.
+If a user provides a password and we stored it in plaintext, then anyone who got access to our database would be able to see that user's password and if that user reused passwords across sites, they would be compromised. Bcrypt hashes the password for us by running some parameters on that password input. 
+
 1. What does bcrypt do to slow down attackers?
+
+Because bcrypt cryptographically hashes an input password, attackers now only view a hashed string that cannot easily be reversed. In order to see the actual password they must have the parameters correct, which is made difficult by the hashing process that may perform the hash multiple times. 
+
 1. What are the three parts of the JSON Web Token?
+
+The JSON Web Token has a header, a payload, and a signature. Header holds info on the token type, payload holds data on the client info, and the signature encodes the header and payload then signs it with a secret. 
 
 ## Project Set Up
 
@@ -54,17 +64,17 @@ Follow these steps for completing your project:
 
 Helpful Tip on Testing this Project:
 
-- [ ] **TEST** this project using **`POSTMAN`**.
+- [x] **TEST** this project using **`POSTMAN`**.
 
 ## Minimum Viable Product
 
-- [ ] Implement the `register` function inside `/config/routes.js`.
-- [ ] Implement the `login` function inside `/config/routes.js`.
-- [ ] Use JSON Web Tokens for authentication.
+- [x] Implement the `register` function inside `/config/routes.js`.
+- [x] Implement the `login` function inside `/config/routes.js`.
+- [x] Use JSON Web Tokens for authentication.
 
 **Note** The migrations and a database with empty users is already included
 
-- [ ] Add the authentication related code. If every is done correctly, visiting `/api/jokes` should return a list of jokes.
+- [x] Add the authentication related code. If every is done correctly, visiting `/api/jokes` should return a list of jokes.
 
 ## Stretch Problem: Build a front end to interface with your User Auth System
 
